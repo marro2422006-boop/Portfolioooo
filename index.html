@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <!-- Linking CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-text">
+                <h1>Hi, I'm a Web Developer</h1>
+                <p>I build modern and interactive web interfaces using the latest Front-end technologies.</p>
+            </div>
+            <div class="about-img">
+                <img src="profile.jpeg" alt="Profile Picture">
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5 / CSS3</li>
+                <li>JavaScript</li>
+                <li>Git & GitHub</li>
+                <li>Responsive Design</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                  
+                    <div class="project-info">
+                        <h3>First Project Name</h3>
+                        <p>A brief description of the project and the technologies used to build it.</p>
+                        <a href="#" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                
+                    <div class="project-info">
+                        <h3>Second Project Name</h3>
+                        <p>A brief description of the project and the technologies used to build it.</p>
+                        <a href="#" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 All Rights Reserved.</p>
+    </footer>
+
+    <!-- Linking JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
