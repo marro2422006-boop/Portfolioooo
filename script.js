@@ -1,50 +1,23 @@
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault();
+// Select the theme toggle button
+const themeToggleBtn = document.getElementById('theme-toggle');
 
-  // الحصول على قيم المدخلات
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+// Check for saved user preference in localStorage
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeToggleBtn.textContent = '☀️ Light Mode';
+}
 
-  // عناصر أخطاء التنسيق
-  const nameError = document.getElementById('nameError');
-  const emailError = document.getElementById('emailError');
-  const messageError = document.getElementById('messageError');
-  const successMsg = document.getElementById('successMsg');
+// Add click event listener to toggle themes
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
 
-  // إعادة ضبط الأخطاء
-  nameError.textContent = '';
-  emailError.textContent = '';
-  messageError.textContent = '';
-  successMsg.textContent = '';
-
-  let isValid = true;
-
-  // التحقق من الاسم
-  if (name === '') {
-    nameError.textContent = 'من فضلك أدخلي اسمك.';
-    isValid = false;
-  }
-
-  // التحقق من البريد الإلكتروني
-  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  if (email === '') {
-    emailError.textContent = 'من فضلك أدخلي البريد الإلكتروني.';
-    isValid = false;
-  } else if (!email.match(emailPattern)) {
-    emailError.textContent = 'صيغة البريد الإلكتروني غير صحيحة.';
-    isValid = false;
-  }
-
-  // التحقق من الرسالة
-  if (message === '') {
-    messageError.textContent = 'من فضلك أكتبي رسالتك.';
-    isValid = false;
-  }
-
-  // إذا كانت البيانات صحيحة
-  if (isValid) {
-    successMsg.textContent = 'تم إرسال رسالتك بنجاح! شكرًا لتواصلك.';
-    this.reset(); // تفريغ الخانات
-  }
+    // Update button text and save preference
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggleBtn.textContent = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeToggleBtn.textContent = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+    }
 });

@@ -1,241 +1,322 @@
-/* Reset & General Styles */
+/* 1. استيراد الخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* 2. Reset الأساسي */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', 'Cairo', system-ui, -apple-system, sans-serif;
+}
+
+/* 3. المتغيرات الألوان */
+:root {
+    --primary-color: #ff8fa3;   /* وردي مشرق */
+    --secondary-color: #0f172a; /* خلفية داكنة راقية */
+    --accent-color: #f8fafc;    /* أبيض للعناوين */
+    --text-color: #cbd5e1;      /* رمادي فاتح للنصوص */
+    --card-bg: #1e293b;        /* خلفية الكروت */
+}
+
+/* 4. إعدادات الصفحة */
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  background-color: #fffafc;
-  color: #333;
-  line-height: 1.6;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    letter-spacing: 0.2px;
 }
 
-/* Header & Nav */
-header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+h1, h2, h3, .logo {
+    font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 5. Navigation Bar (تثبيت القائمة فوق sticky) */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 143, 163, 0.2);
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #d63384;
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
+    display: flex;
+    list-style: none;
+    gap: 25px;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 600;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #d63384;
+    color: var(--primary-color);
 }
 
-/* Hero Section */
-.hero {
-  padding: 5rem 2rem;
-  text-align: center;
-  background: linear-gradient(135deg, #fff0f5 0%, #ffe6eed8 100%);
+/* 6. Section 1: Hero (Flexbox) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0;
+    gap: 40px;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  color: #4a4a4a;
-  margin-bottom: 1rem;
+.hero-text h1 {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto;
+.hero-text p {
+    font-size: 1.1rem;
+    max-width: 500px;
 }
 
-/* General Sections */
-section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+.hero-image img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
 }
 
-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #d63384;
-  margin-bottom: 2.5rem;
+.hero-image img:hover {
+    transform: translateY(-5px);
 }
 
-/* Skills */
+/* 7. Section 2: About (Flexbox) */
+.about-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-section h2, 
+.skills-section h2, 
+.contact-section h2 {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h2::after, 
+.skills-section h2::after, 
+.contact-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: var(--primary-color);
+    bottom: -10px;
+    left: 25%;
+    border-radius: 2px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.about-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    padding: 5px;
+    box-shadow: 0 8px 25px rgba(255, 143, 163, 0.2);
+}
+
+.about-text {
+    max-width: 550px;
+    text-align: left;
+    font-size: 1.05rem;
+}
+
+/* 8. Section 3: Skills (CSS Grid) */
+.skills-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
 }
 
-.skill-card {
-  background-color: #ffffff;
-  border: 1px solid #f3d5e2;
-  color: #d63384;
-  padding: 0.8rem 1.5rem;
-  border-radius: 20px;
-  font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+.card {
+    background-color: var(--card-bg);
+    padding: 30px 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 4px solid var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: all 0.3s ease;
 }
 
-/* Projects */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
-.project-card {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid #fae1ec;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card h3 {
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    margin-bottom: 12px;
 }
 
-.project-card h3 {
-  color: #333;
-  margin-bottom: 0.8rem;
+.card p {
+    font-size: 0.95rem;
 }
 
-.project-card p {
-  color: #666;
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+/* 9. Section 4: Contact Form Styling */
+.contact-section {
+    padding: 80px 30px;
+    text-align: center;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    margin-bottom: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.project-links {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.btn {
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  background-color: #d63384;
-  color: white;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  text-align: center;
-  flex: 1;
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: #d63384;
-  border: 1px solid #d63384;
-}
-
-/* Contact Form */
 .contact-form {
-  max-width: 500px;
-  margin: 0 auto;
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 550px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    text-align: left;
 }
 
 .form-group {
-  margin-bottom: 1.2rem;
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .form-group label {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
-.form-group input,
+.form-group input, 
 .form-group textarea {
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  outline: none;
+    width: 100%;
+    padding: 14px 18px;
+    background-color: var(--secondary-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: var(--accent-color);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.form-group input:focus,
+.form-group input:focus, 
 .form-group textarea:focus {
-  border-color: #d63384;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 143, 163, 0.2);
 }
 
-.error-msg {
-  color: #e63946;
-  font-size: 0.8rem;
-  margin-top: 0.3rem;
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: var(--primary-color);
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.btn-submit {
-  width: 100%;
-  padding: 0.8rem;
-  background-color: #d63384;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
+.btn:hover {
+    background-color: #ffb3c1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 143, 163, 0.3);
 }
 
-.btn-submit:hover {
-  background-color: #b8256f;
+.contact-form .btn {
+    align-self: center;
+    margin-top: 10px;
 }
 
-.success-msg {
-  color: #2a9d8f;
-  text-align: center;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-/* Footer */
+/* 10. Footer */
 footer {
-  text-align: center;
-  padding: 1.5rem;
-  background-color: #f8f9fa;
-  color: #777;
-  font-size: 0.9rem;
+    text-align: center;
+    padding: 30px 0;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Responsive Design */
+/* 11. Responsive Design */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .hero h1 {
-    font-size: 1.8rem;
-  }
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-section, 
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .nav-links {
+        margin: 5px 0;
+        gap: 15px;
+    }
+
+    .card {
+        text-align: center;
+    }
 }

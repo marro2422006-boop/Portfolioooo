@@ -1,107 +1,107 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الموقع الشخصي | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header / Navigation -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">معرض أعمالي</div>
-      <ul class="nav-links">
-        <li><a href="#about">عنّي</a></li>
-        <li><a href="#skills">المهارات</a></li>
-        <li><a href="#projects">المشاريع</a></li>
-        <li><a href="#contact">تواصل معي</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Main Container -->
+    <div class="main-container">
 
-  <!-- Main Content -->
-  <main>
-    <!-- About Section -->
-    <section id="about" class="hero">
-      <div class="hero-content">
-        <h1>مرحباً، أنا مطورة واجهات مستخدم 👋</h1>
-        <p>أقوم ببناء وتصميم مواقع ويب عصرية، متجاوبة، وبواجهات مريحة للمستخدم باستخدام أحدث تقنيات الـ Front-End.</p>
-      </div>
-    </section>
+        <!-- Navigation Bar (ثابتة مع السكرول) -->
+        <header class="navbar">
+            <div class="logo">My Portfolio</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-      <h2>المهارات التقنية</h2>
-      <div class="skills-grid">
-        <div class="skill-card">HTML5</div>
-        <div class="skill-card">CSS3</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">Responsive Design</div>
-        <div class="skill-card">Git & GitHub</div>
-      </div>
-    </section>
+        <!-- Section 1: Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-text">
+                <h1>Hi, I'm Amira</h1>
+                <p>Frontend Developer passionate about crafting clean, beautiful, and user-friendly web experiences.</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&q=80" alt="Workspace desk with laptop">
+            </div>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-      <h2>المشاريع</h2>
-      <div class="projects-grid">
-        
-        <div class="project-card">
-          <h3>مشروع تطبيق صفحة هبوط</h3>
-          <p>صفحة تعريفية بمنتج مصممة باستخدام HTML و CSS وتنسيقات هادئة ومتجاوبة.</p>
-          <div class="project-links">
-            <a href="#" class="btn" target="_blank">المعاينة الحية</a>
-            <a href="#" class="btn btn-outline" target="_blank">الكود على GitHub</a>
-          </div>
-        </div>
+        <!-- Section 2: About Me Section -->
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="profile.jpeg" alt="Amira's Profile Picture">
+                </div>
+                <div class="about-text">
+                    <p>Engineering student and Software Developer passionate about building efficient, interactive, and responsive applications. With a strong foundation in programming, web development, and problem-solving, I am continuously expanding my technical toolkit to craft innovative digital solutions.</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="project-card">
-          <h3>تطبيق قائمة المهام</h3>
-          <p>تطبيق تفاعلي لإضافة وإدارة المهام اليومية باستخدام JavaScript.</p>
-          <div class="project-links">
-            <a href="#" class="btn" target="_blank">المعاينة الحية</a>
-            <a href="#" class="btn btn-outline" target="_blank">الكود على GitHub</a>
-          </div>
-        </div>
+        <!-- Section 3: Skills Section (Grid Layout) -->
+        <section id="skills" class="skills-section">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="card">
+                    <h3>HTML5 & CSS3</h3>
+                    <p>Structuring semantic layouts and styling responsive web pages.</p>
+                </div>
+                <div class="card">
+                    <h3>Flexbox & Grid</h3>
+                    <p>Building modern, flexible, and adaptive page architectures.</p>
+                </div>
+                <div class="card">
+                    <h3>JavaScript</h3>
+                    <p>Adding dynamic behavior and interactive components to websites.</p>
+                </div>
+                <div class="card">
+                    <h3>Git & GitHub</h3>
+                    <p>Managing code versions and deploying projects with GitHub Pages.</p>
+                </div>
+            </div>
+        </section>
 
-      </div>
-    </section>
+        <!-- Section 4: Contact Section with Form -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out by filling out the form below!</p>
+            
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <h2>تواصل معي</h2>
-      <form id="contactForm" class="contact-form">
-        <div class="form-group">
-          <label for="name">الاسم</label>
-          <input type="text" id="name" placeholder="اكتبي اسمك هنا">
-          <small class="error-msg" id="nameError"></small>
-        </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                </div>
 
-        <div class="form-group">
-          <label for="email">البريد الإلكتروني</label>
-          <input type="email" id="email" placeholder="example@domain.com">
-          <small class="error-msg" id="emailError"></small>
-        </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
 
-        <div class="form-group">
-          <label for="message">الرسالة</label>
-          <textarea id="message" rows="5" placeholder="اكتبي رسالتك هنا..."></textarea>
-          <small class="error-msg" id="messageError"></small>
-        </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
 
-        <button type="submit" class="btn-submit">إرسال الرسالة</button>
-        <p id="successMsg" class="success-msg"></p>
-      </form>
-    </section>
-  </main>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Amira. All Rights Reserved.</p>
+        </footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>جميع الحقوق محفوظة &copy; 2026</p>
-  </footer>
+    </div>
 
-  <script src="script.js"></script>
 </body>
 </html>
