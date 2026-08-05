@@ -1,23 +1,18 @@
-// Select the theme toggle button
-const themeToggleBtn = document.getElementById('theme-toggle');
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
 
-// Check for saved user preference in localStorage
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeToggleBtn.textContent = '☀️ Light Mode';
-}
+// فتح وإغلاق القائمة عند الضغط على زر القائمة في الهواتف
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+  navToggle.classList.toggle('active');
+});
 
-// Add click event listener to toggle themes
-themeToggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-
-    // Update button text and save preference
-    if (document.body.classList.contains('dark-mode')) {
-        themeToggleBtn.textContent = '☀️ Light Mode';
-        localStorage.setItem('theme', 'dark');
-    } else {
-        themeToggleBtn.textContent = '🌙 Dark Mode';
-        localStorage.setItem('theme', 'light');
-    }
+// إغلاق القائمة تلقائياً عند النقر على أي رابط انتقال
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
 });
