@@ -52,33 +52,34 @@
                 </div>
     </section>
 
-    <!-- ===== ABOUT SECTION ===== -->
-    <section class="about" id="about">
-      <div class="section-heading">
-        <span class="tag-num">01</span>
-        <h2>About Me</h2>
+  <!-- ===== ABOUT ME SECTION ===== -->
+<section id="about">
+  <div class="section-heading">
+    <h2>About <span>Me</span></h2>
+  </div>
+  <div class="about-card">
+    <p class="about-text">
+      I am a Front-End Developer studying Systems and Computers Engineering at Al-Azhar University. 
+      My academic background gives me a deep understanding of computer science fundamentals, 
+      low-level programming, and software architecture.
+    </p>
+    <p class="about-text">
+      I enjoy transforming creative designs into interactive, accessible, and responsive user interfaces. 
+      I constantly refine my technical skills, build practical web applications, and follow modern front-end standards.
+    </p>
+    
+    <div class="about-meta">
+      <div class="meta-item">
+        <span class="meta-label"><i class="fa-solid fa-graduation-cap"></i> Education</span>
+        <span class="meta-value">Systems &amp; Computers Engineering, Al-Azhar University</span>
       </div>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I am a Front-End Developer studying Systems and Computers Engineering at Al-Azhar University. My academic background gives me a deep understanding of computer science fundamentals, low-level programming, and software architecture.
-          </p>
-          <p>
-            I enjoy transforming creative designs into interactive, accessible, and responsive user interfaces. I constantly refine my technical skills, build practical web applications, and follow modern front-end standards.
-          </p>
-          <ul class="about-facts">
-            <li><strong>Education</strong> Systems &amp; Computers Engineering, Al-Azhar University</li>
-            <li><strong>Role</strong> Front-End Developer</li>
-            <li><strong>Core Focus</strong> HTML, CSS, JavaScript &amp; C/C++ Programming</li>
-          </ul>
-        </div>
-        <figure class="about-image">
-          <img src="https://picsum.photos/seed/amira-workspace/560/620" alt="Engineering & Workspace" />
-          <figcaption>Engineering logic meets clean web design.</figcaption>
-        </figure>
+      <div class="meta-item">
+        <span class="meta-label"><i class="fa-solid fa-code"></i> Core Focus</span>
+        <span class="meta-value">HTML5, CSS3, JavaScript &amp; C/C++ Programming</span>
       </div>
-    </section>
-
+    </div>
+  </div>
+</section>
     <!-- ===== PROJECTS SECTION ===== -->
     <section class="work" id="work">
       <div class="section-heading light">
@@ -156,23 +157,50 @@
       </div>
     </section>
 
-    <!-- ===== CONTACT SECTION ===== -->
-    <section class="contact" id="contact">
-      <div class="contact-inner">
-        <div class="section-heading light">
-          <span class="tag-num">04</span>
-          <h2>Get In Touch</h2>
+   <!-- ===== CONTACT SECTION ===== -->
+<section id="contact">
+  <div class="section-heading">
+    <h2>Get In <span>Touch</span></h2>
+  </div>
+  <div class="contact-card">
+    <div class="contact-info">
+      <h3>Let's build something <br><span>amazing together!</span></h3>
+      <p>
+        Have a project in mind, a question about my work, or just want to say hi? 
+        Feel free to fill out the form or reach out through my channels.
+      </p>
+      
+      <div class="contact-details">
+        <div class="detail-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>marro2422006@gmail.com</span>
         </div>
-        <p class="contact-desc">
-          Feel free to reach out for collaborations, web projects, or engineering discussions. My inbox is always open!
-        </p>
-        <a href="mailto:marro2422006@gmail.com" class="contact-email">marro2422006@gmail.com</a>
-        <div class="contact-links">
-          <a href="https://github.com/marro2422006-boop" target="_blank">GitHub</a>
+        <div class="detail-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Cairo, Egypt</span>
         </div>
       </div>
-    </section>
 
+      <div class="social-links">
+        <a href="https://github.com/marro2422006-boop" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="event.preventDefault();">
+      <div class="input-group">
+        <input type="text" placeholder="Your Name" required />
+      </div>
+      <div class="input-group">
+        <input type="email" placeholder="Your Email" required />
+      </div>
+      <div class="input-group">
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+  </div>
+</section>
     <footer class="site-footer">
       <p>&copy; 2026 Amira Alaa Ali. All rights reserved.</p>
       <!-- ===== EXPERIENCE SECTION ===== -->
