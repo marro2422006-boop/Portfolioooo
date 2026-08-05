@@ -1,107 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amira — Personal Portfolio</title>
+  <meta name="description" content="Front-End Developer & ITI Trainee showcasing projects, skills, and contact info." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- Main Container -->
-    <div class="main-container">
+  <div class="page">
 
-        <!-- Navigation Bar (ثابتة مع السكرول) -->
-        <header class="navbar">
-            <div class="logo">My Portfolio</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+    <!-- ===== NAVIGATION ===== -->
+    <header class="site-header">
+      <nav class="navbar">
+        <a href="#top" class="brand">Amira<span class="brand-dot">.</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about"><span class="tag-num">01</span> About</a></li>
+          <li><a href="#work"><span class="tag-num">02</span> Work</a></li>
+          <li><a href="#skills"><span class="tag-num">03</span> Skills</a></li>
+          <li><a href="#contact"><span class="tag-num">04</span> Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-        <!-- Section 1: Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="hero-text">
-                <h1>Hi, I'm Amira</h1>
-                <p>Frontend Developer passionate about crafting clean, beautiful, and user-friendly web experiences.</p>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&q=80" alt="Workspace desk with laptop">
-            </div>
-        </section>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Front-End Developer &amp; ITI Trainee</p>
+        <h1 class="hero-title">Amira</h1>
+        <p class="hero-role">Building clean, interactive, and modern web applications.</p>
+        <p class="hero-desc">
+          I craft fast and responsive web experiences using HTML, CSS, and JavaScript, with a strong foundation in low-level concepts like C and C++. Based in Egypt.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <img src="https://picsum.photos/seed/amiradeveloper/640/760" alt="Portrait placeholder for Amira" />
+        <span class="portrait-tag">Developer<br />At Work</span>
+      </div>
+    </section>
 
-        <!-- Section 2: About Me Section -->
-        <section id="about" class="about-section">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="profile.jpeg" alt="Amira's Profile Picture">
-                </div>
-                <div class="about-text">
-                    <p>Engineering student and Software Developer passionate about building efficient, interactive, and responsive applications. With a strong foundation in programming, web development, and problem-solving, I am continuously expanding my technical toolkit to craft innovative digital solutions.</p>
-                </div>
-            </div>
-        </section>
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about" id="about">
+      <div class="section-heading">
+        <span class="tag-num">01</span>
+        <h2>About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a passionate web development trainee focused on mastering modern front-end technologies. My learning journey combines practical user-interface projects with foundational computer science logic.
+          </p>
+          <p>
+            I care deeply about well-structured code, efficient version control with Git/GitHub, and sleek visual design. Every project is an opportunity to sharpen my skills and build something practical.
+          </p>
+          <ul class="about-facts">
+            <li><strong>Location</strong> Cairo, Egypt</li>
+            <li><strong>Current Status</strong> ITI Trainee &amp; Open for Opportunities</li>
+            <li><strong>Core Focus</strong> Front-End Development &amp; Software Basics</li>
+          </ul>
+        </div>
+        <figure class="about-image">
+          <img src="https://picsum.photos/seed/amiradesk/560/620" alt="Workspace setup" />
+          <figcaption>Workspace &amp; coding environment.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <!-- Section 3: Skills Section (Grid Layout) -->
-        <section id="skills" class="skills-section">
-            <h2>My Skills</h2>
-            <div class="skills-grid">
-                <div class="card">
-                    <h3>HTML5 & CSS3</h3>
-                    <p>Structuring semantic layouts and styling responsive web pages.</p>
-                </div>
-                <div class="card">
-                    <h3>Flexbox & Grid</h3>
-                    <p>Building modern, flexible, and adaptive page architectures.</p>
-                </div>
-                <div class="card">
-                    <h3>JavaScript</h3>
-                    <p>Adding dynamic behavior and interactive components to websites.</p>
-                </div>
-                <div class="card">
-                    <h3>Git & GitHub</h3>
-                    <p>Managing code versions and deploying projects with GitHub Pages.</p>
-                </div>
-            </div>
-        </section>
+    <!-- ===== PROJECTS / WORK SECTION ===== -->
+    <section class="work" id="work">
+      <div class="section-heading light">
+        <span class="tag-num">02</span>
+        <h2>Featured Work</h2>
+      </div>
 
-        <!-- Section 4: Contact Section with Form -->
-        <section id="contact" class="contact-section">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out by filling out the form below!</p>
-            
-            <form class="contact-form" action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
-                </div>
+      <div class="project-grid">
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
-                </div>
+        <article class="project-card">
+          <span class="project-stamp">No. 01</span>
+          <h3>Mory Hair Cream</h3>
+          <p>A responsive product landing page designed to showcase product features, visuals, and dynamic sections with clean HTML and CSS.</p>
+          <ul class="project-meta">
+            <li>HTML5</li><li>CSS3</li><li>Responsive</li>
+          </ul>
+          <a href="#" class="project-link">View Project →</a>
+        </article>
 
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-                </div>
+        <article class="project-card">
+          <span class="project-stamp">No. 02</span>
+          <h3>The Pastel Bakery</h3>
+          <p>An interactive bakery showcase website experimenting with layout techniques, smooth positioning, and custom styling.</p>
+          <ul class="project-meta">
+            <li>HTML5</li><li>CSS Grid</li><li>Flexbox</li>
+          </ul>
+          <a href="#" class="project-link">View Project →</a>
+        </article>
 
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </section>
+        <article class="project-card">
+          <span class="project-stamp">No. 03</span>
+          <h3>Personal Portfolio</h3>
+          <p>A dark-themed modern personal website built from scratch and deployed using GitHub Pages to showcase projects and contact details.</p>
+          <ul class="project-meta">
+            <li>HTML5</li><li>CSS3</li><li>JavaScript</li>
+          </ul>
+          <a href="#" class="project-link">View Project →</a>
+        </article>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 Amira. All Rights Reserved.</p>
-        </footer>
+      </div>
+    </section>
 
-    </div>
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="skills" id="skills">
+      <div class="section-heading">
+        <span class="tag-num">03</span>
+        <h2>Skills &amp; Tools</h2>
+      </div>
 
+      <div class="skills-layout">
+        <div class="skills-group">
+          <h3>Web Development</h3>
+          <div class="tag-row">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Responsive Design</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <h3>Programming Languages</h3>
+          <div class="tag-row">
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">C++</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <h3>Tools &amp; Platforms</h3>
+          <div class="tag-row">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">GitHub Pages</span>
+            <span class="skill-tag">VS Code</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div class="section-heading light">
+          <span class="tag-num">04</span>
+          <h2>Get In Touch</h2>
+        </div>
+        <p class="contact-desc">
+          Interested in collaborating or discussing web development projects? Feel free to reach out!
+        </p>
+        <a href="mailto:amira@example.com" class="contact-email">amira@example.com</a>
+        <div class="contact-links">
+          <a href="https://github.com" target="_blank">GitHub</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Amira. Built with passion &amp; precision.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
